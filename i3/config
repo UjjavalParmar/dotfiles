@@ -63,10 +63,10 @@ bindsym $mod+d exec --no-startup-id ~/.config/rofi/launchers/type-5/launcher.sh
 bindsym $mod+y exec --no-startup-id ~/.config/rofi/scripts/powermenu_t2
 
 # Screenshots
-bindsym Print exec --no-startup-id maim ~/Pictures/ScreenShots/$(date +%Y-%m-%d_%H-%M-%S)_screenshot.png
-bindsym $mod+Print exec --no-startup-id maim -i $(xdotool getactivewindow) ~/Pictures/ScreenShots/$(date +%Y-%m-%d_%H-%M-%S)_screenshot.png
-bindsym Shift+Print exec --no-startup-id maim -s ~/Pictures/ScreenShots/$(date +%Y-%m-%d_%H-%M-%S)_screenshot.png
-bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png && notify-send "Screenshot copied to clipboard"
+bindsym Print exec --no-startup-id bash -c 'maim ~/Pictures/ScreenShots/$(date +%Y-%m-%d_%H-%M-%S)_screenshot.png && copyq write image/png - < ~/Pictures/ScreenShots/$(ls -t ~/Pictures/ScreenShots/ | head -1) && notify-send "Screenshot saved and copied to clipboard"'
+bindsym $mod+Print exec --no-startup-id bash -c 'maim -i $(xdotool getactivewindow) ~/Pictures/ScreenShots/$(date +%Y-%m-%d_%H-%M-%S)_screenshot.png && copyq write image/png - < ~/Pictures/ScreenShots/$(ls -t ~/Pictures/ScreenShots/ | head -1) && notify-send "Window screenshot saved and copied to clipboard"'
+bindsym Shift+Print exec --no-startup-id bash -c 'maim -s ~/Pictures/ScreenShots/$(date +%Y-%m-%d_%H-%M-%S)_screenshot.png && copyq write image/png - < ~/Pictures/ScreenShots/$(ls -t ~/Pictures/ScreenShots/ | head -1) && notify-send "Selection screenshot saved and copied to clipboard"'
+bindsym Ctrl+Print exec --no-startup-id maim | copyq write image/png - && notify-send "Screenshot copied to clipboard (not saved)"
 
 # CopyQ clipboard manager toggle
 bindsym $mod+c exec --no-startup-id copyq toggle
