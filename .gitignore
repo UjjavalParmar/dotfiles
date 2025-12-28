@@ -31,12 +31,13 @@ pulse/
 .DS_Store
 Thumbs.db
 
+# Temporary/session-specific files
+copyq/
+go/
+
 # Keep these configs
 !i3/
 !polybar/
 !rofi/
 !git/
-!gtk-3.0/
-!copyq/
-!go/
 !mimeapps.list
