@@ -1,0 +1,42 @@
+# Browser data (contains sensitive information)
+BraveSoftware/
+chromium/
+mozilla/
+
+# IDE settings (user-specific)
+Code - OSS/
+
+# Sensitive/session data
+.claude/
+dconf/
+pulse/
+
+# Cache and temporary files
+*/Cache/
+*/cache/
+**/cache/
+*.log
+*.tmp
+
+# Credentials and secrets
+**/credentials*
+**/secrets*
+**/*.key
+**/*.pem
+.env
+.env.*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Keep these configs
+!i3/
+!polybar/
+!rofi/
+!nvim/
+!git/
+!gtk-3.0/
+!copyq/
+!go/
+!mimeapps.list
