@@ -3,6 +3,7 @@ BraveSoftware/
 chromium/
 mozilla/
 
+nvim/
 # IDE settings (user-specific)
 Code - OSS/
 
@@ -34,7 +35,6 @@ Thumbs.db
 !i3/
 !polybar/
 !rofi/
-!nvim/
 !git/
 !gtk-3.0/
 !copyq/
