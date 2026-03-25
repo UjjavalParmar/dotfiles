@@ -1,0 +1,14 @@
+profile laptop-only {
+    output eDP-1 mode 1920x1080 scale 1.6
+}
+
+# Both at scale 1.6 = 675px effective height, all edges match
+profile ultrawide-left {
+    output HDMI-A-1 mode 2560x1080 position 0,0 scale 1.6
+    output eDP-1 mode 1920x1080 position 1600,0 scale 1.6
+}
+
+profile ultrawide-right {
+    output eDP-1 mode 1920x1080 position 0,0 scale 1.6
+    output HDMI-A-1 mode 2560x1080 position 1200,0 scale 1.6
+}
